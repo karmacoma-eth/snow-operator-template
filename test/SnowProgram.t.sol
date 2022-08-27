@@ -11,7 +11,14 @@ contract SnowProgramTest is Test {
        snowProgram = new SnowProgram();
     }
 
-    function testSnow() public {
+    function testCanBeStored() public view {
+        uint256[64] memory buffer;
+        (uint8 index, uint256 value) = snowProgram.run{gas: gasPerRun}(buffer, 0);
+        require(index < 64, "Should return index");
+        require(buffer[index] != value, "Should update value");
+    }
+
+    function testOutput() public {
         uint256[64] memory canvas;
         (uint256 index, uint256 value) = snowProgram.run(canvas, 0);
         assertEq(index, 42);
