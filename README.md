@@ -1,10 +1,4 @@
-## Install dependencies
-
-```sh
-git submodule update --init --recursive
-```
 ## About
-
 The Snow computer is deployed at [0xF53D926c13Af77C53AFAe6B33480DDd94B167610](https://polygonscan.com/address/0xf53d926c13af77c53afae6b33480ddd94b167610)
 - call `becomeOperator` with an existing or new Snow program to get an access key
 - you can call `storeProgram` at any time to update your Snow program
@@ -19,3 +13,45 @@ Examples:
 Reference:
 * https://snow.computer/operators
 * `SnowV1` deployed at [0x7B07afdD4b384B36DFadF4654B19932dc9164Bd6](https://polygonscan.com/address/0x7b07afdd4b384b36dfadf4654b19932dc9164bd6#code)
+
+
+## Getting started
+
+### Install foundry
+
+```sh
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+```
+
+More at [The Foundry Book](https://book.getfoundry.sh/getting-started/installation)
+
+### Install dependencies
+
+```sh
+git submodule update --init --recursive
+```
+
+### Build
+
+```sh
+forge build
+```
+
+### Test
+
+```sh
+forge test -vvv
+```
+
+### Deploy
+
+```sh
+forge script script/SnowProgram.s.sol --broadcast --sender $ETH_FROM --rpc-url $RPC_URL
+```
+
+### Verify
+
+```sh
+forge script script/SnowProgram.s.sol --verify --etherscan-api-key $ETHERSCAN_API_KEY --rpc-url $RPC_URL
+```
