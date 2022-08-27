@@ -52,6 +52,12 @@ forge test -vvv
 forge script script/SnowProgram.s.sol --broadcast --sender $ETH_FROM --rpc-url $RPC_URL
 ```
 
+RTFM:
+- [The Foundry Book's tutorial on Solidity scripting](https://book.getfoundry.sh/tutorials/solidity-scripting#deploying-our-contract) has an example to deploy contracts with scripts
+- [forge script wallet options](https://book.getfoundry.sh/reference/forge/forge-script?highlight=mnemonic#wallet-options---raw) to specify a private key, mnemonic or hardware wallet
+
+
+
 ### Verify
 
 ```sh
