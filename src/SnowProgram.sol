@@ -13,7 +13,7 @@ contract SnowProgram is ISnowV1Program {
     /// @dev    0x0000000000000000000000000000000000000000000000000000000000000000 is an all black square (will be rejected by SnowV1.storeProgram() though)
     /// @dev    ~canvas[lastUpdatedIndex] inverts the colors of the last updated square
     /// @dev sprites can be hardcoded as uint256 and generated at https://snow.computer/operators
-    function run(uint256[64] memory canvas, uint8 lastUpdatedIndex) external returns (uint8 index, uint256 value) {
+    function run(uint256[64] calldata canvas, uint8 lastUpdatedIndex) external returns (uint8 index, uint256 value) {
         index = 42;
         value = 42;
     }
