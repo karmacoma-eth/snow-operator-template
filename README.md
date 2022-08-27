@@ -1,3 +1,10 @@
+## Install dependencies
+
+```sh
+git submodule update --init --recursive
+```
+## About
+
 The Snow computer is deployed at [0xF53D926c13Af77C53AFAe6B33480DDd94B167610](https://polygonscan.com/address/0xf53d926c13af77c53afae6b33480ddd94b167610)
 - call `becomeOperator` with an existing or new Snow program to get an access key
 - you can call `storeProgram` at any time to update your Snow program
