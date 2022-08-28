@@ -5,13 +5,14 @@ import "forge-std/Test.sol";
 import "../src/SnowProgram.sol";
 
 contract SnowProgramTest is Test {
+    uint256 public gasPerRun = 50_000;
     SnowProgram public snowProgram;
 
     function setUp() public {
        snowProgram = new SnowProgram();
     }
 
-    function testCanBeStored() public view {
+    function testCanBeStored() public {
         uint256[64] memory buffer;
         (uint8 index, uint256 value) = snowProgram.run{gas: gasPerRun}(buffer, 0);
         require(index < 64, "Should return index");
